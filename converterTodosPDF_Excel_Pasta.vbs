@@ -1,6 +1,11 @@
-copiarPDF("C:\Users\aarunner01\Downloads\pasta")
+copiarPDF()
 
-Sub copiarPDF(pasta) 'mencionar a pasta dos arquivos PDF
+Sub copiarPDF() 'mencionar a pasta dos arquivos PDF
+
+set shellApp = CreateObject("Shell.Application")
+set folder = shellApp.BrowseForFolder(0, "Selecione a Pasta", 0, myStartFolder)
+pasta = folder.Self.Path
+
 
 'OBS: antes de executar esse script, salve todos os arquivos excel e word, pois ele mata todos esses processos antes de executar.
 
